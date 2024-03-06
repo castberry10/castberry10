@@ -1,5 +1,5 @@
-### 🍇🍇🍇🍇🍇🍇🍇🍇🍇🍇🍒🍒🍒🍒🍒
-
+### 🍇🍇🍇🍇🍇🍇🍇🍇🍇🍇🍒🍒🍒🍒🍒  
+### [🍒Tistory Blog🍒](https://dinae.tistory.com/)
 <!--
 **castberry10/castberry10** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
