@@ -2,6 +2,7 @@
 ### [🍒Tistory Blog🍒](https://dinae.tistory.com/)
 
 
+![KakaoTalk_20240420_171922823](https://github.com/castberry10/castberry10/assets/25453543/c024f1b4-03b0-4906-a5cb-413ca8875826)
 
 <!--
 ![KakaoTalk_20240413_133338645](https://github.com/castberry10/castberry10/assets/25453543/2eb6daf7-2d60-49ee-aaf3-9459dad09639)
