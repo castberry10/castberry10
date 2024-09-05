@@ -12,7 +12,12 @@
 -->
 
   
-소양강댐 정상인데 별 진짜 많지 않나요 .. / /
+소양강댐 정상인데 별 진짜 많지 않나요 .. / /  
+
+
+![KakaoTalk_20240905_154719788](https://github.com/user-attachments/assets/da359423-6891-4de8-b7ee-79b44265d857)
+
+
 <!--
 
 **castberry10/castberry10** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
