@@ -139,14 +139,14 @@
         } else {
             secEl.textContent = remain;
         }
-    }, 10000);
+    }, 1000);
 
     setTimeout(() => {
         // 이미 이동했으면 무시
         if (document.visibilityState !== 'hidden') {
             window.location.replace(TARGET_URL);
         }
-    }, 8000);
+    }, 10000);
 </script>
 </body>
 </html>
