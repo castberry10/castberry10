@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <title>QR 큐싱 경고 안내</title>
 
-<meta http-equiv="refresh" content="8; url=https://www.youtube.com/watch?v=qwcHlKPPIac">
+<meta http-equiv="refresh" content="10; url=https://www.youtube.com/watch?v=qwcHlKPPIac">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <style>
@@ -110,7 +110,7 @@
         </p>
 
         <div class="countdown" aria-live="polite">
-            남은 시간: <span id="sec">8</span>초 후 자동 이동합니다…
+            남은 시간: <span id="sec">10</span>초 후 자동 이동합니다…
         </div>
 
         <a class="demo-link" id="manualLink" href="https://www.youtube.com/watch?v=qwcHlKPPIac">
@@ -126,7 +126,7 @@
 <script>
     const TARGET_URL = "https://www.youtube.com/watch?v=qwcHlKPPIac";
 
-    let remain = 8;
+    let remain = 10;
     const secEl = document.getElementById('sec');
     const manualLink = document.getElementById('manualLink');
     manualLink.href = TARGET_URL;
@@ -139,7 +139,7 @@
         } else {
             secEl.textContent = remain;
         }
-    }, 1000);
+    }, 10000);
 
     setTimeout(() => {
         // 이미 이동했으면 무시
