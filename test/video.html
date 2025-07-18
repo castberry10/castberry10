@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<title>QR 큐싱 경고 안내</title>
+
+<meta http-equiv="refresh" content="5; url=https://www.youtube.com/watch?v=qwcHlKPPIac">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<style>
+    :root {
+        color-scheme: light dark;
+        --bg: #0f1115;
+        --fg: #f5f7fa;
+        --accent: #ff3d5a;
+        --accent-soft: #ff6d82;
+        --radius: 14px;
+        --font-stack: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+                      Roboto, "Noto Sans KR", "Apple SD Gothic Neo", Arial, sans-serif;
+    }
+    body {
+        margin:0;
+        font-family: var(--font-stack);
+        background: radial-gradient(circle at 30% 30%, #1d2530, #0f1115 70%);
+        color: var(--fg);
+        display:flex;
+        min-height:100vh;
+        align-items:center;
+        justify-content:center;
+        padding:2rem 1.2rem;
+        line-height:1.55;
+    }
+    .card {
+        max-width:720px;
+        width:100%;
+        background: rgba(255,255,255,0.04);
+        backdrop-filter: blur(8px);
+        border:1px solid rgba(255,255,255,0.08);
+        border-radius: var(--radius);
+        padding:2.2rem 2rem 2.6rem;
+        position:relative;
+        box-shadow:0 8px 28px -6px rgba(0,0,0,.55);
+        animation: fadeIn .6s ease;
+    }
+    h1 {
+        margin:0 0 1rem;
+        font-size: clamp(1.6rem, 3vw, 2.2rem);
+        letter-spacing:-.5px;
+        line-height:1.25;
+        background: linear-gradient(95deg, var(--accent), var(--accent-soft));
+        -webkit-background-clip: text;
+        color: transparent;
+        font-weight:700;
+    }
+    p { margin:.8rem 0; }
+    .warn {
+        font-weight:600;
+        background: rgba(255,61,90,0.12);
+        border:1px solid rgba(255,61,90,0.35);
+        padding:.85rem 1rem;
+        border-radius: var(--radius);
+    }
+    .countdown {
+        margin-top:1.4rem;
+        font-size:1.05rem;
+        font-weight:500;
+    }
+    a.demo-link {
+        display:inline-block;
+        margin-top:1.1rem;
+        background: var(--accent);
+        color:#fff;
+        text-decoration:none;
+        padding:.85rem 1.25rem;
+        font-weight:600;
+        border-radius: var(--radius);
+        box-shadow:0 3px 10px -2px rgba(255,61,90,.55);
+        transition: background .25s, transform .25s;
+    }
+    a.demo-link:hover {
+        background: var(--accent-soft);
+        transform: translateY(-2px);
+    }
+    .footer-note {
+        margin-top:1.8rem;
+        font-size:.8rem;
+        opacity:.65;
+    }
+    @keyframes fadeIn {
+        from { opacity:0; transform: translateY(12px); }
+        to   { opacity:1; transform: translateY(0); }
+    }
+</style>
+</head>
+<body>
+    <main class="card" role="main">
+        <h1> 이 사이트는 피싱사이트입니다!</h1>
+
+        <p class="warn">
+            이 사이트는 큐싱의 위험성을 알리기 위한 사이트입니다.<br>
+            이러한 큐싱 피해를 막고자 한다면 저희 앱을 다운로드 해주세요.<br>
+            8초 뒤에 저희 앱의 시연 영상으로 이동합니다.
+        </p>
+
+
+        <p class="warn">
+            QR 코드를 악용한 큐싱 공격은 가짜 QR스티커로
+            사용자를 악성 사이트로 유도하여 개인정보나 결제를 노립니다.
+        </p>
+
+        <div class="countdown" aria-live="polite">
+            남은 시간: <span id="sec">8</span>초 후 자동 이동합니다…
+        </div>
+
+        <a class="demo-link" id="manualLink" href="https://www.youtube.com/watch?v=qwcHlKPPIac">
+            직접 바로 보기
+        </a>
+
+        <div class="footer-note">
+            브라우저가 자동으로 이동하지 않으면 위 버튼을 클릭하세요.
+        </div>
+    </main>
+
+<script>
+    const TARGET_URL = "https://www.youtube.com/watch?v=qwcHlKPPIac";
+
+    let remain = 8;
+    const secEl = document.getElementById('sec');
+    const manualLink = document.getElementById('manualLink');
+    manualLink.href = TARGET_URL;
+
+    const timer = setInterval(() => {
+        remain--;
+        if (remain <= 0) {
+            clearInterval(timer);
+            window.location.replace(TARGET_URL);
+        } else {
+            secEl.textContent = remain;
+        }
+    }, 1000);
+
+    setTimeout(() => {
+        // 이미 이동했으면 무시
+        if (document.visibilityState !== 'hidden') {
+            window.location.replace(TARGET_URL);
+        }
+    }, 5000);
+</script>
+</body>
+</html>
